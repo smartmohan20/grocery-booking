@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["node", "dotenv"],
+    "types": ["node", "dotenv", "jsonwebtoken"],
     "target": "es6",
     "module": "commonjs",
     "strict": true,
