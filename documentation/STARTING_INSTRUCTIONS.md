@@ -1,5 +1,4 @@
-# Project Staring Documentation
-
+# Project Staring Instructions
 ## Running the Project
 
 To run the TypeScript Node.js project, follow these steps:

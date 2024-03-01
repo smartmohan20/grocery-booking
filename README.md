@@ -13,6 +13,7 @@ Explore detailed documentation for the project:
 - [API Documentation](/documentation/API_DOCUMENTATION.md)
 - [Requirements](/documentation/REQUIREMENTS.md)
 - [Setup Instructions](/documentation/SETUP_INSTRUCTIONS.md)
+- [Starting Instructions](/documentation/STARTING_INSTRUCTIONS.md)
 
 ## Contact
 
