@@ -13,6 +13,9 @@ yarn tsc --init
 ### Install dotenv
 ```
 yarn add dotenv
+yarn add --dev @types/dotenv
+yarn upgrade dotenv @types/dotenv --dev
+
 ```
 
 ### Install body-parser
