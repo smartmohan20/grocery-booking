@@ -1,6 +1,6 @@
-import OrderModel from '../../../models/Order';
-import OrderItemModel from '../../../models/OrderItem';
-import GroceryItemModel from '../../../models/GroceryItem';
+import { Order } from '../../../models/Models';
+import { OrderItem } from '../../../models/Models';
+import { GroceryItem } from '../../../models/Models';
 import { Op } from 'sequelize';
 
 // Method to book items
@@ -14,7 +14,7 @@ export const bookItems = async (userId: number, items: any[]) : Promise<any> => 
         };
 
         if (items && items.length > 0) {
-            const order = await OrderModel.create(
+            const order = await Order.create(
                 {
                     user: userId
                 }
@@ -28,7 +28,7 @@ export const bookItems = async (userId: number, items: any[]) : Promise<any> => 
                     const itemId = item.id;
                     const quantity = item.quantity;
                     for (let j = 0; j < quantity; j++) {
-                        const orderItem = await OrderItemModel.create(
+                        const orderItem = await OrderItem.create(
                             {
                                 item_id: itemId,
                                 order_id: intOrderId
@@ -70,7 +70,7 @@ export const getOrder = async (userId: number, id: number) : Promise<any> => {
             errors: []
         };
 
-        const order = await OrderModel.findOne({
+        const order = await Order.findOne({
             where: {
                 id: id,
                 user: userId
@@ -78,7 +78,7 @@ export const getOrder = async (userId: number, id: number) : Promise<any> => {
         });
 
         if (order) {
-            const orderItems = await OrderItemModel.findAll({
+            const orderItems = await OrderItem.findAll({
                 where: {
                     order_id: id
                 }
@@ -89,7 +89,7 @@ export const getOrder = async (userId: number, id: number) : Promise<any> => {
             });
 
             if (arrItemIds.length > 0) {
-                const items = await GroceryItemModel.findAll({
+                const items = await GroceryItem.findAll({
                     where: {
                         id: {
                           [Op.in]: arrItemIds

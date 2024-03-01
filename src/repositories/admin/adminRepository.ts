@@ -1,4 +1,4 @@
-import AdminModel from '../../models/Admin';
+import { Admin } from '../../models/Models';
 import jwt from 'jsonwebtoken';
 import { AUTH_SECRET_KEY, TOKEN_EXPIRY } from '../../config/jwtConfig';
 
@@ -12,7 +12,7 @@ export const signup = async (email: string, password: string) : Promise<any> => 
             errors: []
         };
 
-        const admin = await AdminModel.create({ email, password });
+        const admin = await Admin.create({ email, password });
         if (admin) {
             objRes.statusCode = 201;
             objRes.message = 'Signup successful!';
@@ -35,7 +35,7 @@ export const login = async (email: string, password: string) : Promise<any> => {
             errors: []
         };
 
-        const admin = await AdminModel.findOne({ where: { email, password } });
+        const admin = await Admin.findOne({ where: { email, password } });
         if (admin) {
             objRes.statusCode = 200;
             objRes.message = 'Login successful!';

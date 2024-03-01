@@ -1,4 +1,4 @@
-import GroceryItemModel from '../../../models/GroceryItem';
+import { GroceryItem } from '../../../models/Models';
 
 // Method to add grocery item
 export const addGroceryItem = async (owner: number, name: string, price: number, inventory: number) : Promise<any> => {
@@ -10,7 +10,7 @@ export const addGroceryItem = async (owner: number, name: string, price: number,
             errors: []
         };
 
-        const groceryItem = await GroceryItemModel.create(
+        const groceryItem = await GroceryItem.create(
             {
                 name: name,
                 price: price,
@@ -40,7 +40,7 @@ export const getGroceryItems = async (owner: number) : Promise<any> => {
             errors: []
         };
 
-        const groceryItems = await GroceryItemModel.findAll({
+        const groceryItems = await GroceryItem.findAll({
             where: {
               owner: owner,
             },
@@ -68,7 +68,7 @@ export const removeGroceryItem = async (owner: number, id: number) : Promise<any
             errors: []
         };
 
-        const groceryItem = await GroceryItemModel.destroy({
+        const groceryItem = await GroceryItem.destroy({
             where: {
                 id: id,
                 owner: owner
@@ -95,7 +95,7 @@ export const updateGroceryItem = async (owner: number, id: number, name: string,
             errors: []
         };
 
-        const groceryItem = await GroceryItemModel.update(
+        const groceryItem = await GroceryItem.update(
             {
                 name: name,
                 price: price,
@@ -130,7 +130,7 @@ export const updateInventory = async (owner: number, id: number, inventory: numb
             errors: []
         };
 
-        const groceryItem = await GroceryItemModel.update(
+        const groceryItem = await GroceryItem.update(
             {
                 inventory: inventory
             },

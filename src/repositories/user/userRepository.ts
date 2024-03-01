@@ -1,4 +1,4 @@
-import UserModel from '../../models/User';
+import { User } from '../../models/Models';
 import jwt from 'jsonwebtoken';
 import { AUTH_SECRET_KEY, TOKEN_EXPIRY } from '../../config/jwtConfig';
 
@@ -12,7 +12,7 @@ export const signup = async (email: string, password: string) : Promise<any> => 
             errors: []
         };
 
-        const user = await UserModel.create({ email, password });
+        const user = await User.create({ email, password });
         if (user) {
             objRes.statusCode = 201;
             objRes.message = 'Signup successful!';
@@ -35,7 +35,7 @@ export const login = async (email: string, password: string) : Promise<any> => {
             errors: []
         };
 
-        const user = await UserModel.findOne({ where: { email, password } });
+        const user = await User.findOne({ where: { email, password } });
         if (user) {
             objRes.statusCode = 200;
             objRes.message = 'Login successful!';

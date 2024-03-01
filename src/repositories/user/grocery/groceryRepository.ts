@@ -1,5 +1,5 @@
 import { Op } from 'sequelize';
-import GroceryItemModel from '../../../models/GroceryItem';
+import { GroceryItem } from '../../../models/Models';
 
 // Method to get available grocery items
 export const getAvailableItems = async () : Promise<any> => {
@@ -11,7 +11,7 @@ export const getAvailableItems = async () : Promise<any> => {
             errors: []
         };
 
-        const groceryItems = await GroceryItemModel.findAll({
+        const groceryItems = await GroceryItem.findAll({
             where: {
                 inventory: {
                     [Op.gt]: 0 // Using Sequelize's greater than (>) operator

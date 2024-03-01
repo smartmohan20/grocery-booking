@@ -6,6 +6,7 @@ import bodyParser from 'body-parser';
 // Load environment variables from .env file
 dotenv.config();
 
+import './models/Models';
 import sequelize from './config/database';
 import rootRoutes from './routes/rootRoutes';
 import adminRoutes from './routes/admin/adminRoutes';
