@@ -11,6 +11,6 @@ groceryRouter.post('/add', groceryController.addGroceryItemController);
 groceryRouter.get('/get-all', groceryController.getGroceryItemsController);
 groceryRouter.delete('/remove/:id', groceryController.removeGroceryItemController);
 groceryRouter.put('/update/:id', groceryController.updateGroceryItemController);
-groceryRouter.patch('/update-inventory/:id', groceryController.updateInventoryController);
+groceryRouter.put('/update-inventory/:id', groceryController.updateInventoryController);
 
 export default groceryRouter;
