@@ -2,7 +2,7 @@
 
 Discover the power of our **Grocery Booking Backend APIs** – a meticulously crafted Fullstack Node solution. Effortlessly administer grocery operations with TypeScript for optimal code quality. Enjoy features like admin controls, user-friendly booking, and Docker for advanced deployment.
 
-**Repo:** `qp-assessment`
+**Repo:** `grocery-booking`
 
 Contribute to the robust backend of grocery management now!
 
